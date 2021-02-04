@@ -1,4 +1,16 @@
 <script type="text/html" id="home">    
-  <h1>Home</h1>
-  <h1><%= title %></h1>
+
+  <form class="login" id="login-form">
+    <p class="form__error"><%= error %></p>
+
+    <label for="email-input" class="login__label">Email:</label>
+    <input type="text" class="login__input" id="email-input" name="email" required/>
+
+    <label for="password-input" class="login__label">Password:</label>
+    <input type="text" class="login__input" id="password-input" name="password" required/>
+
+    <button type="submit" class="login__submit">Login</button>
+  </form>
+
 </script>
+
