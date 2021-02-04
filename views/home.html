@@ -1,16 +1,33 @@
 <script type="text/html" id="home">    
+  <div class="page">
+    <form class="login" id="login-form">
+      <h1 class="login__heading">Login</h1>
 
-  <form class="login" id="login-form">
-    <p class="form__error"><%= error %></p>
+      <p class="login__error"><%= error %></p>
+  
+      <label for="username-input" class="login__label">Username:</label>
+      <input 
+        type="text" 
+        class="login__input" 
+        id="username-input" 
+        name="username" 
+        placeholder="Type your username"
+        required
+      />
+  
+      <label for="password-input" class="login__label">Password:</label>
+      <input 
+        type="password" 
+        class="login__input" 
+        id="password-input" 
+        name="password" 
+        placeholder="Type your password"
+        required
+      />
+  
+      <button type="submit" class="login__submit">Login</button>
 
-    <label for="email-input" class="login__label">Email:</label>
-    <input type="text" class="login__input" id="email-input" name="email" required/>
-
-    <label for="password-input" class="login__label">Password:</label>
-    <input type="text" class="login__input" id="password-input" name="password" required/>
-
-    <button type="submit" class="login__submit">Login</button>
-  </form>
-
+    </form>
+  </div>
 </script>
 

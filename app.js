@@ -7,11 +7,11 @@ route('/', 'home', function() {
 
     this.$on('#login-form', 'submit', async (event) => {
         event.preventDefault();
-        const email = event.target.elements['email'].value;
+        const username = event.target.elements['username'].value;
         const password = event.target.elements['password'].value;
 
         try {
-            const {status, data} = await axios.post('https://zwzt-zadanie.netlify.app/api/login', {email, password});
+            const {status, data} = await axios.post('https://zwzt-zadanie.netlify.app/api/login', {username, password});
             window.location.href = '#/success';
         } catch (error) {
             this.error = 'Something went wrong, please try again';
