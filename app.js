@@ -5,8 +5,8 @@ route('/', 'home', function() {
 });
 
 
-route('/welcome', 'welcome', function() {
-    this.title = 'Welcome';
+route('/success', 'success', function() {
+    this.title = 'success';
 });
 
 route('*', '404', function () {});
