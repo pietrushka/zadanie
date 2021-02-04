@@ -2,6 +2,11 @@ import axios from 'axios';
 
 import { route } from './router';
 
+let state = {
+    username: '',
+    token: '',
+};
+
 route('/', 'home', function() {
     this.error = ''
 
@@ -11,7 +16,9 @@ route('/', 'home', function() {
         const password = event.target.elements['password'].value;
 
         try {
-            const {status, data} = await axios.post('https://zwzt-zadanie.netlify.app/api/login', {username, password});
+            const {data} = await axios.post('https://zwzt-zadanie.netlify.app/api/login', {username, password});
+            state.username = username
+            state.token = data.token
             window.location.href = '#/success';
         } catch (error) {
             this.error = 'Something went wrong, please try again';
@@ -23,7 +30,7 @@ route('/', 'home', function() {
 
 
 route('/success', 'success', function() {
-    this.title = 'success';
+    this.username = state.username;
 });
 
 route('*', '404', function () {});
